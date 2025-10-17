@@ -23,7 +23,7 @@ Oyun GitHub Pages üzerinden yayınlanmıştır:
 ## ⚖️ Telif Hakkı ve Patent
 
 Bu projenin tüm fikri ve teknik hakları **True Kinetic Studios** adına tescillenmiştir.  
-Tasarım, kod yapısı, ses entegrasyonu ve oyun fikri **TOLERANS** tarafından geliştirilmiş ve patent başvurusu yapılmıştır.
+Tasarım, kod yapısı, ses entegrasyonu ve oyun fikri **True Kinetic Professionel** tarafından geliştirilmiş ve patent başvurusu yapılmıştır.
 
 > © 2025 True Kinetic Studios. Tüm hakları saklıdır.  
 > Bu proje izinsiz kopyalanamaz, çoğaltılamaz veya ticari amaçla kullanılamaz.
