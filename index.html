@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayetler ile Canlıları Öğreniyorum</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="overlay">
+    <div id="overlay-content">
+      <img id="game-logo" src="https://copilot.microsoft.com/th/id/BCO.8e4dac03-f0e8-48a3-984d-f1a5ff0b8b00.png" alt="Ayetler ile Canlıları Öğreniyorum" />
+      <button id="start-btn" onclick="startGame()">Oyuna Başla</button>
+    </div>
+  </div>
+
+  <div id="game" class="hidden">
+    <div id="status" class="glass">
+      <span id="level">Seviye: 1</span>
+      <span id="lives">Can: 3</span>
+      <span id="points">Puan: 0</span>
+    </div>
+    <div id="question-box" class="glass">Soru buraya gelecek</div>
+    <div id="options"></div>
+    <div id="feedback" class="glass"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
