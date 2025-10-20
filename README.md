@@ -18,7 +18,7 @@ Bu oyun, özellikle genç kullanıcılar için hem eğlenceli hem de öğretici 
 ## 🚀 Yayın
 
 Oyun GitHub Pages üzerinden yayınlanmıştır:  
-🔗 [Oynamak İçin Tıkla!](https://truekineticstudios.github.io/truekinetic-quiz)
+🔗 [Oynamak İçin Tıkla!](https://truekineticstudios.github.io/ayetler-ile-canlilari-ogreniyorum/)
 
 ## ⚖️ Telif Hakkı ve Patent
 
