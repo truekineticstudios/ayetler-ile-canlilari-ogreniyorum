@@ -1,20 +1,17 @@
 const questions = {
   1: [
-    { verse: "Toprağı eşeleyen, yerin altına yuva kuran… (Neml 18)", options: ["Fare", "Solucan", "Karınca", "Köstebek"], answer: "Karınca" },
+    { verse: "Toprağı eşeleyen, yerin altına yuva kuran… (Neml 18)", options: ["Karınca", "Solucan", "Yılan", "Köstebek"], answer: "Karınca" },
     { verse: "Kanat çırpanlar gökyüzünde saf saf dizilir… (Mülk 19)", options: ["Kelebek", "Yarasa", "Kuş", "Arı"], answer: "Kuş" },
-    { verse: "Gece sessizliğinde hareket eden, iz bırakmayan… (Neml 18)", options: ["Kirpi", "Yılan", "Baykuş", "Kedi"], answer: "Yılan" },
+    { verse: "Gece sessizliğinde hareket eden, iz bırakmayan… (Neml 18)", options: ["Kirpi", "Karınca", "Baykuş", "Kedi"], answer: "Karınca" },
     { verse: "Sürü halinde hareket eden, çayırlarda otlayan… (Nahl 5)", options: ["İnek", "Tavşan", "Koyun", "At"], answer: "Koyun" },
     { verse: "Yük taşıyan, çölde sabırla yürüyen… (Gâşiye 17)", options: ["Fil", "Deve", "At", "Eşek"], answer: "Deve" },
     { verse: "Küçük yapısıyla büyük işler yapan… (Nahl 68)", options: ["Karınca", "Arı", "Sinek", "Kelebek"], answer: "Arı" },
-    { verse: "Su kenarında yaşayan, sıçrayarak ilerleyen… (Bakara 74)", options: ["Fare", "Kurbağa", "Yengeç", "Kertenkele"], answer: "Kurbağa" },
-    { verse: "Geceleri avlanan, sessizce süzülen… (En'am 97)", options: ["Tilki", "Baykuş", "Yarasa", "Kedi"], answer: "Baykuş" },
     { verse: "Kendi ağıyla tuzak kuran… (Ankebut 41)", options: ["Kuş", "Karınca", "Arı", "Örümcek"], answer: "Örümcek" },
-    { verse: "Suda yaşayan, solungaçla nefes alan… (Nur 45)", options: ["Kaplumbağa", "Balık", "Kurbağa", "Yunus"], answer: "Balık" },
+    { verse: "Gökleri ve yeri bir düzen içinde yarattık… (Enbiya 16)", options: ["Atmosfer", "Ekosistem", "Denge", "Yerçekimi"], answer: "Ekosistem" },
     { verse: "Kışın yuvasına çekilen, yazın aktif olan… (Nahl 5)", options: ["Kirpi", "Ayı", "Fare", "Köstebek"], answer: "Ayı" },
-    { verse: "Kuyruğuyla denge sağlayan, ağaçlara tırmanan… (Sad 71)", options: ["Koala", "Maymun", "Sincap", "Kedi"], answer: "Sincap" },
     { verse: "Küçük kanatlarıyla uzun mesafeler uçan… (Nahl 69)", options: ["Kuş", "Sinek", "Arı", "Kelebek"], answer: "Kelebek" },
     { verse: "Yüksekten atlayan, güçlü arka bacaklara sahip… (Bakara 22)", options: ["Zebra", "Tavşan", "Ceylan", "Kanguru"], answer: "Kanguru" },
-    { verse: "Karanlıkta yönünü bulan, sesle yolunu çizen… (En'am 38)", options: ["Baykuş", "Köpek", "Yarasa", "Kedi"], answer: "Yarasa" }
+    { verse: "Karanlıkta yönünü bulan, sesle yolunu çizen… (En'am 38)", options: ["Baykuşlar", "Köpekler", "Kuşlar", "Kediler"], answer: "Kuşlar" }
   ],
   2: [
     { verse: "Rüzgarları döllenme göreviyle gönderdik… (Hicr 22)", options: ["Polen", "Kuş", "Sinek", "Arı"], answer: "Polen" },
@@ -63,6 +60,8 @@ let level = 1;
 let lives = 3;
 let points = 0;
 let currentQuestion = 0;
+let hasAnswered = false;
+
 
 // ▶️ Oyunu başlat
 function startGame() {
@@ -99,9 +98,11 @@ function loadQuestion() {
   });
 }
 
-
 // ✅ Cevap kontrolü
 function checkAnswer(selected, correct) {
+  if (hasAnswered) return;
+  hasAnswered = true;
+
   const feedback = document.getElementById("feedback");
   if (selected === correct) {
     points += 10;
@@ -120,6 +121,7 @@ function checkAnswer(selected, correct) {
 
   currentQuestion++;
   setTimeout(() => {
+    hasAnswered = false;
     if (lives === 0) {
       endGame(false);
     } else {
@@ -134,6 +136,9 @@ function endGame(won) {
   document.getElementById("game").innerHTML = `
     <h2>${won ? "Tebrikler! Tüm seviyeleri tamamladın." : "Oyun Bitti!"}</h2>
     <p>Toplam Puan: ${points}</p>
+    <p>Kalan Canlar: ${lives}</p>
     <button onclick="location.reload()">Yeniden Başla</button>
+    <p>Oynadığın İçin Teşekkürler!</p>
+    <p>Destek Hattı👾: truekineticservices@gmail.com </p>
   `;
 }
